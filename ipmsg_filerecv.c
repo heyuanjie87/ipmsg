@@ -1,3 +1,16 @@
+/*
+ * Copyright (c) 2018, Real-Thread Information Technology Ltd
+ * All rights reserved
+ *
+ * Copyright (c) 2006-2018, RT-Thread Development Team
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Change Logs:
+ * Date           Author       Notes
+ * 2019-04-28     heyuanjie87  the first version
+ */
+
 #include <rtthread.h>
 #include "ipmsg.h"
 #include "ipmsgdef.h"
