@@ -15,6 +15,7 @@
 #include "ipmsg.h"
 #include "ipmsgdef.h"
 
+#include <stdio.h>
 #include <sys/socket.h>
 #include "netdb.h"
 
@@ -98,7 +99,6 @@ static void msg_server(void *p)
     int sock;
     char *buf;
     ipmsg_filehandler_t *fh = p;
-    int ret;
     int stage = 0;
 
     fh->notify(fh, IPMSG_FE_ENTER, NULL);
