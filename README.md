@@ -7,9 +7,10 @@
 ## 2. 配置
 ```
 //rtconfig.h
-
-#define IPMSG_MSGRS_ENABLE    //启用ipmsg
+#define PKG_USING_IPMSG        //启用ipmsg
 #define IPMSG_FILERECV_ENABLE //启用文件接收服务
+
+#define IPMSG_MSGRS_ENABLE    //启用消息收发示例
 
 #define IPMSG_MSG_BUFSZ 300   //消息缓冲区，不定义默认300字节
 #define IPMSG_FILERECV_BUFSZ   1024 //文件接收缓冲区，不定义默认1024字节
