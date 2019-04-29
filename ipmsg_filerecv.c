@@ -138,7 +138,7 @@ static void msg_server(void *p)
         {
             fh->notify(fh, IPMSG_FE_CLOSE, fh->fi);
         }
-            goto _out;
+        goto _out;
         }
     }
 
