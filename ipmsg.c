@@ -222,7 +222,7 @@ static ipmsg_filehandler_t *fileinfo_unpack(char *str, int size)
     int pos = 0;
     ipmsg_filehandler_t *fh = NULL;
 
-    LOG_I("[file] %s \n[%d]", str, size);
+    LOG_D("[file] %s \n[%d]", str, size);
 
     if ((fh = rt_calloc(1, sizeof(*fh))) == NULL)
         return NULL;
