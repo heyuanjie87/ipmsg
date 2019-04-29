@@ -10,8 +10,8 @@ typedef struct
     char *msgbuf;
     char *mrbuf;
     char user[24+1];
-    char host[24+1];
-    char group[24+1];
+    char host[16+1];
+    char group[16+1];
 
     long usrdata;
 } ipmsg_t;
@@ -23,6 +23,7 @@ typedef struct ipmsg_fileinfo
     uint32_t size;
     uint32_t attr;
 
+    uint32_t pos;
     struct ipmsg_fileinfo *next;
 }ipmsg_fileinfo_t;
 
@@ -60,6 +61,7 @@ typedef struct
 int ipmsg_msgserver_init(ipmsg_t *im, short port); /* default port = 2425 */
 void ipmsg_msgserver_deinit(ipmsg_t *im);
 int ipmsg_login(ipmsg_t *im);
+int ipmsg_logout(ipmsg_t *im);
 int ipmsg_msg_recv(ipmsg_t *im, int ms, const ipmsg_msghandler_t *h);
 int ipmsg_msg_send(ipmsg_t *im, uint32_t ip, const char *str);
 int ipmsg_user_set(ipmsg_t *im, const char *name);

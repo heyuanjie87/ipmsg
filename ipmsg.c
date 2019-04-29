@@ -395,6 +395,15 @@ int ipmsg_login(ipmsg_t *im)
     return ret;
 }
 
+int ipmsg_logout(ipmsg_t *im)
+{
+    int ret;
+
+    ret = msg_send(im, 0xFFFFFFFF, IPMSG_BR_EXIT, im->user, im->group);
+
+    return ret;
+}
+
 int ipmsg_msg_recv(ipmsg_t *im, int ms, const ipmsg_msghandler_t *h)
 {
     int ret;
@@ -501,6 +510,8 @@ int ipmsg_msg_send(ipmsg_t *im, uint32_t ip, const char *str)
 
 int ipmsg_user_set(ipmsg_t *im, const char *name)
 {
+    if (name == NULL)
+        return -1;
     strncpy(im->user, name, 24);
 
     return 0;

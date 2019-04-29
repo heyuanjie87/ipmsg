@@ -57,10 +57,10 @@ static int ipmsg_data_recv(int sk, ipmsg_filehandler_t *fh, ipmsg_fileinfo_t *fi
         if (ret <= 0)
             ret = 0;
         else if (ret > 0)
-            fi->size -= ret;
+            fi->pos += ret;
     }
 
-    if (fi->size == 0)
+    if (fi->size == fi->pos)
     {
         fh->notify(fh, IPMSG_FE_COMPLETE, fi);
         ret = 0;
