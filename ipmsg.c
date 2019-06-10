@@ -419,6 +419,8 @@ int ipmsg_msg_recv(ipmsg_t *im, int ms, const ipmsg_msghandler_t *h)
             return -1;
         if (ret == (IPMSG_MSG_BUFSZ + 1))
             return ret;
+
+        im->mrbuf[ret] = 0;
         if (!msg_unpack(im->mrbuf, ret, &fm))
         {
             LOG_W("frame err");
